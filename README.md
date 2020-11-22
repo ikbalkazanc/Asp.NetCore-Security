@@ -5,7 +5,7 @@
 
   <h3 align="center">Asp.Net Core 3.1 Basic Attacks and Solutions</h3>
   <p align="center">
-    This repository explain simple but effective attacks through examples. Asp.Net  can  resolving many problem. We need to do just let it.
+    This repository explain simple but effective attacks through examples. Asp.Net can resolving many problem. <br/> We need to do just let it.
     <br />
     <br />
   </p>
@@ -94,6 +94,7 @@ Normally we are recording connection string to `appsettings.json`. But datas not
 <img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/resim_2020-11-23_022355.png" alt="Logo" width="420" height="140">
   </div>
 <br/>
+
 We can access by right click web project file then choice `Manage Users Secrets` so to top secret file. Now, We can write secret contexts inside of `appsettings.json` to this json file. Asp.NET Core add `secrets.json` inside to `appsettings.json` in compile time. Thinkable like one file.   
 
 ## CORS (Cross-Origin Resource Sharing)
