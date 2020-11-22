@@ -91,13 +91,34 @@ Actually you can do this checking process as filter too. Thus you can checking i
 ## Secret Protection
 Normally we are recording connection string to `appsettings.json`. But datas not be in safe there. Asp.Net Core is avert this situation. it's providing top secret file for top secret data. Thanks Bill Doors 🙏. <br/>
 <div align="center">
-<img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/resim_2020-11-23_022355.png" alt="Logo" width="420" height="140">
+<img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/resim_2020-11-23_022355.png" alt="Logo" width="360" height="120">
   </div>
 <br/>
 
 We can access by right click web project file then choice `Manage Users Secrets` so to top secret file. Now, We can write secret contexts inside of `appsettings.json` to this json file. Asp.NET Core add `secrets.json` inside to `appsettings.json` in compile time. Thinkable like one file.   
 
 ## CORS (Cross-Origin Resource Sharing)
+in sum, Permission is required to pass through CORS. in conclusion not its dad's farm. We need to a policy key for permission. We can define CORS in `Startup.cs` services. 
+````
+public void ConfigureServices(IServiceCollection services)
+{
+  services.AddCors(options =>
+  {   
+    //allow all domains            
+    options.AddDefaultPolicy(builder =>
+    {
+      builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    }); 
+    
+    //allow spesific domains
+    options.AddPolicy("AllowSites", builder =>
+    {
+      builder.WithOrigins("https://localhost:44355", "https://anywebsites.com", "etc.")
+      .AllowAnyHeader().AllowAnyMethod();
+    });
+  });
+}
+````
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
