@@ -32,5 +32,5 @@
   <!-- CONTACT -->
 ## Contact
 
-Muhammet İkbal KAZANCI - [@your_linkedin](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
+Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
 
