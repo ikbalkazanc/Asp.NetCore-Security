@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/ikbalkazanc">
-    <img href="https://upload.wikimedia.org/wikipedia/commons/a/a3/.NET_Logo.svg" alt="Logo" width="80" height="80">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/.NET_Logo.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Asp.Net Core 3.1 Basic Attacks and Solutions</h3>
