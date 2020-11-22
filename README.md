@@ -16,8 +16,8 @@
 * [Security Precautions](#security-precautions)
   * [Data Protection](#data-protection)
   * [IP Control](#ip-control)
-  * [Secret Protection](#installation)
-  * [CORS](#installation)
+  * [Secret Protection](#secret-protection)
+  * [CORS](#cors)
 * [Attacks](#usage)
   * [XSS](#prerequisites)
     * [Reflected](#prerequisites)
@@ -94,6 +94,7 @@ Actually you can do this checking process as filter too. Thus you can checking i
 Normally we are recording connection string to `appsettings.json`. But datas not be in safe there. Asp.Net Core is avert this situation. it's providing top secret file for top secret data. Thanks Bill Doors 🙏. <br/>
 We can access by right click web project file then choice `Manage Users Secrets` so to top secret file. Now, We can write secret contexts inside of `appsettings.json` to this json file. Asp.NET Core add `secrets.json` inside to `appsettings.json` in compile time. Thinkable like one file.   
 
+## CORS(Cross-Origin Resource Sharing)
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
