@@ -26,8 +26,13 @@
   * [CSRF](#installation)
   * [Open Redirect Attacks](#installation)
   * [SQL Injection](#installation)
-  
-  
+ 
+  ## Data Protection
+Not need "TATAVA". in sum, Valuable data are require hide. Therefore we will encrypt data. Thus datas are store as encrypted for memory or cookies in client side.
+```sh
+www.domain.com/products/77
+www.domain.com/products/PIjlIX2rVMPEsXyZ9rvhQJdJDxXRr5zyt_hiDhRRlBmtLo1npprgm2CMnQRcBWylcVWq8fjvwyngsfad
+````
   
   <!-- CONTACT -->
 ## Contact
