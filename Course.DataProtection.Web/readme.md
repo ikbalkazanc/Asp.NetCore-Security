@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/ikbalkazanc">
-    <img src="https://lh3.googleusercontent.com/proxy/pUt-ybQ0BaBUWHh7cQsbTj33qb9gdPJFUhwCfb7eqi0JblCvN53sPhaSXXk0irULCByr_ZLiOcnAb5tMAmXd6KI" alt="Logo" width="400" height="150">
+    <img src="https://lh3.googleusercontent.com/proxy/pUt-ybQ0BaBUWHh7cQsbTj33qb9gdPJFUhwCfb7eqi0JblCvN53sPhaSXXk0irULCByr_ZLiOcnAb5tMAmXd6KI" alt="Logo" width="420" height="140">
   </a>
 
   <h3 align="center">Asp.Net Core 3.1 Basic Attacks and Solutions</h3>
