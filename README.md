@@ -89,7 +89,7 @@ Last all we need to do let know middleware to asp.net. We define `IPSafeMiddlewa
 ```
 app.UseMiddleware<IPSafeMiddleWare>();
 ```
-Actually you can do this checking process as filter. Therefore you can checking ip in controller level or action level. Maybe this can improve performance.  
+Actually you can do this checking process as filter too. Thus you can checking ip in controller level or action level. Maybe this can improve performance.  
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
