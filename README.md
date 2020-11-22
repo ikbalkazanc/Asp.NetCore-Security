@@ -60,7 +60,7 @@ return View();
 ````
 <bold>Note :</bold> All of thing must add (`services.AddDataProtection()`) in (`Startup.cs`) services. Also all of these can be as middleware.
 
-##IP Control
+#### IP Control
 
 
 <!-- CONTACT -->
