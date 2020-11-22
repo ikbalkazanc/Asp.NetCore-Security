@@ -91,7 +91,7 @@ app.UseMiddleware<IPSafeMiddleWare>();
 ```
 Actually you can do this checking process as filter too. Thus you can checking ip in controller level or action level. Maybe this can improve performance.  
 ## Secret Protection
-Normally we are recording connection string to `appsettings.json`. But datas not be in safe there. Asp.Net Core is avert this situation. it's providing top secret file for top secret data. Thanks Bill Doors. \n 
+Normally we are recording connection string to `appsettings.json`. But datas not be in safe there. Asp.Net Core is avert this situation. it's providing top secret file for top secret data. Thanks Bill Doors. <br/>
 We can access by right click web project file then choice `Manage Users Secrets` so to top secret file. Now, We can write secret contexts inside of `appsettings.json` to this json file. Asp.NET Core add `secrets.json` inside to `appsettings.json` in compile time. Thinkable like one file.   
 
 <!-- CONTACT -->
