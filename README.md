@@ -15,7 +15,7 @@
 
 * [Security Precautions](#security-precautions)
   * [Data Protection](#data-protection)
-  * [IP Control](#prerequisites)
+  * [IP Control](#ip-control)
   * [Secret Protection](#installation)
   * [CORS](#installation)
 * [Attacks](#usage)
@@ -59,6 +59,9 @@ return View();
 }
 ````
 <bold>Note :</bold> All of thing must add (`services.AddDataProtection()`) in (`Startup.cs`) services. Also all of these can be as middleware.
+
+###IP Control
+
 
 <!-- CONTACT -->
 ## Contact
