@@ -42,8 +42,25 @@ public ProductController(IDataProtectionProvider provider)
   _dataProtector = provider.CreateProtector("private_key_for_example_can_be_ProductController");            
 }
 ````
-  
-  <!-- CONTACT -->
+And we can define encrypter in action input and output. I'm fondle .Net Core's eye. it is just that easy.  
+```sh
+public IActionResult Index()
+{
+int userId = 1001;
+int encrypUserId = _dataProtector.Protect(userId);
+return View(encrypUserId);
+}
+````
+```sh
+public IActionResult Index(string encryptedId)
+{
+int userPassword = Int32.Parse(_dataProtector.Unrotect(userPassword));
+return View();
+}
+````
+<bold>Note :</bold> All of things must add (`services.AddDataProtection()`) in (`Startup.cs`) services. Also all of these can be as middleware.
+
+<!-- CONTACT -->
 ## Contact
 
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
