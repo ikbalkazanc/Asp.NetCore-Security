@@ -58,7 +58,7 @@ int userPassword = Int32.Parse(_dataProtector.Unrotect(userPassword));
 return View();
 }
 ````
-<bold>Note :</bold> All of thing must add `services.AddDataProtection()` in `Startup.cs` services. Also all of these can be as middleware.
+<bold>Note :</bold> Above all must add `services.AddDataProtection()` in `Startup.cs` services. Also all of these can be as middleware.
 
 ## IP Control
 
