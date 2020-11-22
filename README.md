@@ -43,7 +43,7 @@ public ProductController(IDataProtectionProvider provider)
 }
 ````
 And we can define encrypter in action input and output. I'm fondle .Net Core's eye. it is just that easy.  
-```sh
+```cs
 public IActionResult Index()
 {
 int userId = 1001;
@@ -61,8 +61,9 @@ return View();
 <bold>Note :</bold> Above all must add `services.AddDataProtection()` in `Startup.cs` services. Also all of these can be as middleware.
 
 ## IP Control
-
-
+IP control provide to define blacklist or whitelist for IPs. We will manegement IP lists. Thus we can block malicious. We will code as middleware in this sample.  
+```sh
+```
 <!-- CONTACT -->
 ## Contact
 
