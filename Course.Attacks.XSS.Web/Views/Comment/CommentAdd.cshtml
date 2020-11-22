@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "CommentAdd";
+}
+
+
+
+<br />
+<form method="post">
+    <input type="text" name="name" />
+    <br />
+    <textarea name="comment"></textarea>
+    <br />
+    <input type="submit" value="Gönder" />
+</form>
+<hr />
+<h1>Yorumlar</h1>
+<strong> @ViewBag.name</strong>
+<br />
+@*Have default security for xss in razor
+<strong> @*ViewBag.comment</strong>*@
+@Html.Raw(ViewBag.comment)
+<br />
