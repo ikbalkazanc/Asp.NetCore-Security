@@ -43,7 +43,7 @@ public ProductController(IDataProtectionProvider provider)
 }
 ````
 And we can define encrypter in action input and output. I'm fondle .Net Core's eye. it is just that easy.  
-```cs
+```sh
 public IActionResult Index()
 {
 int userId = 1001;
@@ -61,11 +61,36 @@ return View();
 <bold>Note :</bold> Above all must add `services.AddDataProtection()` in `Startup.cs` services. Also all of these can be as middleware.
 
 ## IP Control
-IP control provide to define blacklist or whitelist for IPs. We will manegement IP lists. Thus we can block malicious. We will code as middleware in this sample.  
+IP control provide to define blacklist or whitelist for IPs. We will manegement IP lists. Thus we can block malicious. We will code as middleware level in this sample. Therefore we need to define `RequestDelegate` in dependency injections.   
 ```sh
+private readonly RequestDelegate _next;
+  private readonly string[] _ipBlackList = {"127.0.0.1", "::1"};
+  
+  public IPSafeMiddleWare(RequestDelegate next)
+  {
+    _next = next;
+  }
 ```
+And coding `Invoke()` method. This method provide coding middleware to us. Required request context for method. And we check that it is in blacklist.
+```sh
+public async Task Invoke(HttpContext context)
+{
+  var requestIpAdress = context.Connection.RemoteIpAddress;
+  var isWhiteList = _ipBlackList.Where(x => IPAddress.Parse(x).Equals(requestIpAdress)).Any();
+  if (!isWhiteList)
+  {
+    context.Response.StatusCode = (int) HttpStatusCode.Forbidden;
+    return;
+  }           
+  await _next(context);
+ }
+```
+Last all we need to do let know middleware to asp.net. We define `IPSafeMiddleware` in `Startup.cs` `Configure` method. And finished.
+```
+app.UseMiddleware<IPSafeMiddleWare>();
+```
+Actually you can do this checking process as filter. Therefore you can checking ip in controller level or action level. Maybe this can improve performance.  
 <!-- CONTACT -->
 ## Contact
-
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
 
