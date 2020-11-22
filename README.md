@@ -33,7 +33,7 @@ www.domain.com/products/77
 www.domain.com/products/PIjlIX2rVMPEsXyZ9rvhQJdJDxXRr5zyt_hiDhRRlBmtLo1npprgm2CMnQRcBWylcVWq8fjvwyngsfad
 ````
 
-We will use (`Microsoft.AspNetCore.DataProtection`). Have require two things us. Top secret key and (`IDataProtector`) dependency injection in controller. Key thinkable like door key. Key is require for opening door.
+We will use `Microsoft.AspNetCore.DataProtection`. Have require two things us. Top secret key and (`IDataProtector`) dependency injection in controller. Key thinkable like door key. Key is require for opening door.
 ```sh
 private readonly IDataProtector _dataProtector;
 
@@ -58,7 +58,7 @@ int userPassword = Int32.Parse(_dataProtector.Unrotect(userPassword));
 return View();
 }
 ````
-<bold>Note :</bold> All of thing must add (`services.AddDataProtection()`) in (`Startup.cs`) services. Also all of these can be as middleware.
+<bold>Note :</bold> All of thing must add `services.AddDataProtection()` in `Startup.cs` services. Also all of these can be as middleware.
 
 ## IP Control
 
