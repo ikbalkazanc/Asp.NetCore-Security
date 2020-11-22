@@ -44,16 +44,16 @@ And we can define encrypter in action input and output. I'm fondle .Net Core's e
 ```csharp
 public IActionResult Index()
 {
-int userId = 1001;
-int encrypUserId = _dataProtector.Protect(userId);
-return View(encrypUserId);
+  int userId = 1001;
+  int encrypUserId = _dataProtector.Protect(userId);
+  return View(encrypUserId);
 }
 ````
 ```csharp
 public IActionResult Index(string encryptedId)
 {
-int userPassword = Int32.Parse(_dataProtector.Unrotect(userPassword));
-return View();
+  int userPassword = Int32.Parse(_dataProtector.Unrotect(userPassword));
+  return View();
 }
 ````
 <bold>Note :</bold> Above all must add `services.AddDataProtection()` in `Startup.cs` services. Also all of these can be as middleware.
@@ -62,12 +62,12 @@ return View();
 IP control provide to define blacklist or whitelist for IPs. We will manegement IP lists. Thus we can block malicious. We will code as middleware level in this sample. Therefore we need to define `RequestDelegate` in dependency injections.   
 ```csharp
 private readonly RequestDelegate _next;
-  private readonly string[] _ipBlackList = {"127.0.0.1", "::1"};
+private readonly string[] _ipBlackList = {"127.0.0.1", "::1"};
   
-  public IPSafeMiddleWare(RequestDelegate next)
-  {
-    _next = next;
-  }
+public IPSafeMiddleWare(RequestDelegate next)
+{
+  _next = next;
+}
 ```
 And coding `Invoke()` method. This method provide coding middleware to us. Required request context for method. And we check that it is in blacklist.
 ```csharp
@@ -98,7 +98,7 @@ Normally we are recording connection string to `appsettings.json`. But datas not
 We can access by right click web project file then choice `Manage Users Secrets` so to top secret file. Now, We can write secret contexts inside of `appsettings.json` to this json file. Asp.NET Core add `secrets.json` inside to `appsettings.json` in compile time. Thinkable like one file.   
 
 ## CORS (Cross-Origin Resource Sharing)
-in sum, Permission is required to pass through CORS. in conclusion not its dad's farm. We need to a policy key for permission. We can define CORS in `Startup.cs` services. 
+in sum, Permission is required to pass through CORS. in conclusion not its dad's farm. We need to a policy key for permission. We can define CORS in `Startup.cs` services. Then require add inside middleware layer like this `app.UseCors("AllowSites");`. 
 ````csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -119,6 +119,8 @@ public void ConfigureServices(IServiceCollection services)
   });
 }
 ````
+Also we can define more specific rules. I tried explain in project file. You can examine.
+
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
