@@ -25,7 +25,7 @@
   * [CSRF](#installation)
   * [Open Redirect Attacks](#installation)
   * [SQL Injection](#installation)
-
+# Security Precautions
 ## Data Protection
 Not need "TATAVA". in sum, Valuable data are require hide. Therefore we will encrypt data. Thus datas are store as encrypted for memory or cookies in client side.
 ```sh
@@ -60,7 +60,7 @@ return View();
 ````
 <bold>Note :</bold> All of thing must add (`services.AddDataProtection()`) in (`Startup.cs`) services. Also all of these can be as middleware.
 
-#### IP Control
+## IP Control
 
 
 <!-- CONTACT -->
