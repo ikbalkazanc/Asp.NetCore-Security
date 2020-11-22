@@ -26,13 +26,13 @@
 # Security Precautions
 ## Data Protection
 Not need "TATAVA". in sum, Valuable data are require hide. Therefore we will encrypt data. Thus datas are store as encrypted for memory or cookies in client side.
-```sh
+```
 www.domain.com/products/77
 www.domain.com/products/PIjlIX2rVMPEsXyZ9rvhQJdJDxXRr5zyt_hiDhRRlBmtLo1npprgm2CMnQRcBWylcVWq8fjvwyngsfad
 ````
 
 We will use `Microsoft.AspNetCore.DataProtection`. Have require two things us. Top secret key and (`IDataProtector`) dependency injection in controller. Key thinkable like door key. Key is require for opening door.
-```sh
+```csharp
 private readonly IDataProtector _dataProtector;
 
 public ProductController(IDataProtectionProvider provider)
@@ -41,7 +41,7 @@ public ProductController(IDataProtectionProvider provider)
 }
 ````
 And we can define encrypter in action input and output. I'm fondle .Net Core's eye. it is just that easy.  
-```sh
+```csharp
 public IActionResult Index()
 {
 int userId = 1001;
@@ -49,7 +49,7 @@ int encrypUserId = _dataProtector.Protect(userId);
 return View(encrypUserId);
 }
 ````
-```sh
+```csharp
 public IActionResult Index(string encryptedId)
 {
 int userPassword = Int32.Parse(_dataProtector.Unrotect(userPassword));
@@ -60,7 +60,7 @@ return View();
 
 ## IP Control
 IP control provide to define blacklist or whitelist for IPs. We will manegement IP lists. Thus we can block malicious. We will code as middleware level in this sample. Therefore we need to define `RequestDelegate` in dependency injections.   
-```sh
+```csharp
 private readonly RequestDelegate _next;
   private readonly string[] _ipBlackList = {"127.0.0.1", "::1"};
   
@@ -70,7 +70,7 @@ private readonly RequestDelegate _next;
   }
 ```
 And coding `Invoke()` method. This method provide coding middleware to us. Required request context for method. And we check that it is in blacklist.
-```sh
+```csharp
 public async Task Invoke(HttpContext context)
 {
   var requestIpAdress = context.Connection.RemoteIpAddress;
@@ -84,7 +84,7 @@ public async Task Invoke(HttpContext context)
  }
 ```
 Last all we need to do let know middleware to asp.net. We define `IPSafeMiddleware` in `Startup.cs` `Configure` method. And finished.
-```
+```csharp
 app.UseMiddleware<IPSafeMiddleWare>();
 ```
 Actually you can do this checking process as filter too. Thus you can checking ip in controller level or action level. Maybe this can improve performance.  
@@ -99,7 +99,7 @@ We can access by right click web project file then choice `Manage Users Secrets`
 
 ## CORS (Cross-Origin Resource Sharing)
 in sum, Permission is required to pass through CORS. in conclusion not its dad's farm. We need to a policy key for permission. We can define CORS in `Startup.cs` services. 
-````
+````csharp
 public void ConfigureServices(IServiceCollection services)
 {
   services.AddCors(options =>
