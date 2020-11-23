@@ -17,9 +17,9 @@
   * [Secret Protection](#secret-protection)
   * [CORS](##cors-cross-origin-resource-sharing)
 * [Attacks](#usage)
-  * [XSS](#prerequisites)
-    * [Reflected](#prerequisites)
-    * [Stored](#prerequisites)
+  * [XSS](#xss)
+    * [Reflected](#reflected)
+    * [Stored](#stored)
   * [CSRF](#installation)
   * [Open Redirect Attacks](#installation)
   * [SQL Injection](#installation)
@@ -121,6 +121,10 @@ public void ConfigureServices(IServiceCollection services)
 ````
 Also we can define more specific rules. I tried explain in project file. You can examine.
 
+# Attacks
+## XSS
+### Reflected
+### Stored
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
