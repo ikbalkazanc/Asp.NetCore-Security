@@ -20,8 +20,8 @@
   * [XSS](#xss)
     * [Reflected](#reflected)
     * [Stored](#stored)
-    * [Dom](#Dom-document-object-model)
-  * [CSRF](#installation)
+    * [Dom](#domdocument-object-model)
+  * [CSRF](#csrfcross-site-request-forgery)
   * [Open Redirect Attacks](#installation)
   * [SQL Injection](#installation)
 # Security Precautions
@@ -134,7 +134,8 @@ Hacker is integrate scripts to browser in client side. Nevertheless we can block
 ### Stored
 Hacker is integrate scripts to source code in server side. it's so dangerous. Hacker can access all users data.  
 ### Dom(Document Object Model)
-This way genrally weld up from trying to payload after # sign. 
+This way genrally weld up from trying to payload after # sign.
+## CSRF(Cross Site Request Forgery)
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
