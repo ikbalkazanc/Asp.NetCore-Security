@@ -151,7 +151,7 @@ services.AddControllersWithViews(opt =>
 });
 ````
 
-if you want disable antiforgery token in controller level.
+if you want we can disable antiforgery token in controller level.
 
 ````csharp
 [IgnoreAntiforgeryToken]     
@@ -160,7 +160,7 @@ public IActionResult Index()
   return View();
 }
 ````
-
+<strong>Note :</strong> if necessary you can find about CSRF code in `Course.Attacks.XSS.Web` project.
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
