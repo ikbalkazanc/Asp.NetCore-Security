@@ -15,11 +15,12 @@
   * [Data Protection](#data-protection)
   * [IP Control](#ip-control)
   * [Secret Protection](#secret-protection)
-  * [CORS](##cors-cross-origin-resource-sharing)
+  * [CORS](#cors-cross-origin-resource-sharing)
 * [Attacks](#usage)
   * [XSS](#xss)
     * [Reflected](#reflected)
     * [Stored](#stored)
+    * [Dom](#Dom-document-object-model)
   * [CSRF](#installation)
   * [Open Redirect Attacks](#installation)
   * [SQL Injection](#installation)
@@ -125,6 +126,7 @@ Also we can define more specific rules. I tried explain in project file. You can
 ## XSS
 ### Reflected
 ### Stored
+### Dom(Document Object Model)
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
