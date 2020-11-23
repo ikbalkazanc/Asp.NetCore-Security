@@ -161,6 +161,10 @@ public IActionResult Index()
 }
 ````
 <strong>Note :</strong> if necessary you can find about CSRF code in `Course.Attacks.XSS.Web` project.
+
+## Open Redirect Attack
+
+## SQL Injection
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
