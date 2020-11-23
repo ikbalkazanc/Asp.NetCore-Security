@@ -141,7 +141,7 @@ This way genrally weld up from trying to payload after # sign.
     <img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/cross_site_request_forger_1.png.jpg" alt="Logo" width="80%" height="80%" ">
 </a></div>
 Actually picture explain everything. in sum, hacker is creating new request with using fake url. in meantime he's stealing datas inside of request.</br>
-Solution of this problem is simple too with Asp.Net Core. We're will using application level filter. We're adding service in `Startup.cs` file. And it finished.
+Solution of this problem is simple too with Asp.Net Core. We're will using application level filter. We're adding service in `Startup.cs` file. And it finished.</br>
 ````csharp
 services.AddControllersWithViews(opt =>
 {
