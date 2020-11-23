@@ -142,12 +142,12 @@ This way genrally weld up from trying to payload after # sign.
 </a></div>
 Actually picture explain everything. in sum, hacker is creating new request with using fake url. in meantime he's stealing datas inside of request.</br>
 Solution of this problem is simple too with Asp.Net Core. We're will using application level filter. We're adding service in `Startup.cs` file. And it finished.
-```csharp
+````csharp
 services.AddControllersWithViews(opt =>
 {
   opt.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
 });
-```
+````
 
 if you want disable antiforgery token in controller level.
 
