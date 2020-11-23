@@ -137,7 +137,7 @@ Hacker is integrate scripts to source code in server side. it's so dangerous. Ha
 This way genrally weld up from trying to payload after # sign.
 ## CSRF(Cross Site Request Forgery)
 <a href="https://github.com/ikbalkazanc">
-    <img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/cross_site_request_forger_1.png.jpg" alt="Logo" width="200%" height="140" ">
+    <img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/cross_site_request_forger_1.png.jpg" alt="Logo" width="50%" height="50%" ">
   </a>
 
 <!-- CONTACT -->
