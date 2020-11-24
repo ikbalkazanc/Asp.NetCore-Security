@@ -138,7 +138,7 @@ This way genrally weld up from trying to payload after # sign.
 ## CSRF(Cross Site Request Forgery)
 <div align="center">
 <a href="https://github.com/ikbalkazanc">
-    <img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/cross_site_request_forger_1.png.jpg" alt="Logo" width="80%" height="80%" ">
+    <img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/cross_site_request_forger_1.png.jpg" alt="Logo" width="65%" height="65%" ">
 </a></div>
 </br>
 Actually picture explain everything. in sum, hacker is creating new request with using fake url. in meantime he's stealing datas inside of request. Solution of this problem is simple too with Asp.Net Core. it's creating token for request. When reponse arrive in back Asp.Net Core is checking token.</br>
