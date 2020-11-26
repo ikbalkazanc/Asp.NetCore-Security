@@ -193,7 +193,7 @@ public IActionResult Login(string mail,string password)
 }
 ```
 ## SQL Injection
-if i'm explain with example got better. To exemplify, suppose we're doing dynamic search in database with text box. like that:
+if i'm explain with example got better. Suppose we're doing dynamic search in database with text box. like that:
 ```csharp
 [HttpPost]
 public async Task<IActionResult> Search(string searchText)
@@ -202,16 +202,16 @@ public async Task<IActionResult> Search(string searchText)
   return View(product);  
 }
 ```
-if hacker is discern this bug, he will try to search ` '' OR '1' = '1' `. We're add it to SQL query. 
+if hacker is discern this bug, he will try to search ` '' OR '1' = '1' `. And add it to SQL query. 
 ```sql
 SELECT * FROM product WHERE Name='' OR '1' = '1'
 ```
 The hacker's getting all the data in this way. as solution we can write sql query like this
-```cshtml
+```csharp
 var products = _context.Product.FromSqlRaw($"SELECT * FROM product WHERE Name={searchText}").ToList();
 ```
 or we can use LINQ Expressions
-```cshtml
+```csharp
 var products = _context.Product.Where(x => x.Name == serachText).ToList();
 ```
 <!-- CONTACT -->
