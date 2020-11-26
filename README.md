@@ -214,6 +214,7 @@ or we can use LINQ Expressions
 ```csharp
 var products = _context.Product.Where(x => x.Name == serachText).ToList();
 ```
+
 <!-- CONTACT -->
 ## Contact
 Muhammet İkbal KAZANCI - [LinkedIn](https://www.linkedin.com/in/ikbalkazanc/) - mi.kazanci@hotmail.com
