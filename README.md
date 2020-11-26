@@ -57,7 +57,7 @@ public IActionResult Index(string encryptedId)
   return View();
 }
 ````
-<bold>Note :</bold> Above all must add `services.AddDataProtection()` in `Startup.cs` services. Also all of these can be as middleware.
+<strong>Note :</strong> Above all must add `services.AddDataProtection()` in `Startup.cs` services. Also all of these can be as middleware.
 
 ## IP Control
 IP control provide to define blacklist or whitelist for IPs. We will manegement IP lists. Thus we can block malicious. We will code as middleware level in this sample. Therefore we need to define `RequestDelegate` in dependency injections.   
